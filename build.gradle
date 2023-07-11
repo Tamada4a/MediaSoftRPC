@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.1'
 	id 'io.spring.dependency-management' version '1.1.0'
+	id "org.liquibase.gradle" version "2.2.0"
 }
 
 group = 'com.example'
@@ -15,7 +16,16 @@ repositories {
 dependencies {
 	//Spring Boot
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-graphql'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//MySQL
+	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	//liquibase
+	implementation 'org.liquibase:liquibase-gradle-plugin:2.2.0'
+	implementation 'org.liquibase:liquibase-core:4.20.0'
 
 	//lombok
 	compileOnly 'org.projectlombok:lombok:1.18.26'
@@ -23,12 +33,6 @@ dependencies {
 
 	testCompileOnly 'org.projectlombok:lombok:1.18.26'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
-
-	//thrift
-	implementation 'org.apache.thrift:libthrift:0.18.1'
-
-	//GraphQL
-	implementation 'com.graphql-java:graphql-java:20.4'
 }
 
 test {
