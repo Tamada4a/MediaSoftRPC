@@ -22,25 +22,25 @@ public class UserController {
     }
 
 
-    @QueryMapping
+    @QueryMapping(value = "getAllUsers")
     public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
 
 
-    @QueryMapping
+    @QueryMapping(value = "getUsers")
     public List<User> getUsers(@Argument int count){
         return userService.getUsers(count);
     }
 
 
-    @QueryMapping
+    @QueryMapping(value = "getUser")
     public User getUser(@Argument int id){
         return userService.getUser(id);
     }
 
 
-    @MutationMapping
+    @MutationMapping(value = "createUser")
     public User createUser(@Argument String name, @Argument String surname){
         return userService.createUser(name, surname);
     }
