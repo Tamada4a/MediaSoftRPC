@@ -1,1 +1,2 @@
-# MediaSoftRPC
+# Server (GraphQL)
+GraphQL сервис
