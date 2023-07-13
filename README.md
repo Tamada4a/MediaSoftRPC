@@ -1,7 +1,7 @@
 # MediaSoftRPC
 ## Запуск
 1. Скачать клиент и сервер.
-2. Если необходимо, поднять локально MySQL с помощью `docker-compose up` в папке Server (GraphQL).
+2. Если необходимо, поднять локально MySQL с помощью `docker-compose up` в папке Server (GraphQL). В ином случае создать базу данных, в ней схему и заменить порт, название схемы, пароль от базы данных в `Server (GraphQL)/src/main/resources/application.properties` на ваши.
 3. Запустить сервер и клиент.
 4. Протестировать работоспособность сервисов можно запустив все запросы из коллекции Postman (GraphQL.postman_collection.json):
    + В папке Server requests лежат запросы для тестрования GraphQL сервиса.
